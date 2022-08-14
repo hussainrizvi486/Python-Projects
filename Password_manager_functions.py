@@ -14,6 +14,9 @@ class Functions():
         main_set.extend(symb_set)
         return main_set
     
+    
+    
+    #You must have to create a txt file a name that file on 34
     def Generator(self,name="account name", length:float=9):
         self.name=name
         self.length=length
@@ -36,19 +39,22 @@ class Functions():
             sys.exit()
 
     
+    #You must have to create a txt file a name that file on 43
     def Add_Pass_Manually(self, user_name:str="account name", user_password:str="password"):
         self.usr_name=user_name
         self.passwd=user_password
-        with open('Hand_pass', "a")as f:
+        with open('file.txt', "a")as f:
             f.write(self.usr_name+" : "+self.passwd)
-    
+            
+            
+    #Also change name of file in 52 or 56
     def View_Passwords(self, user_choice:str="generator history" ):
         self.choice=user_choice
         if self.choice =="generator history":
-            with open("file.txt", "r")as f:
+            with open("file.txt0", "r")as f:
                 for data in f.readlines():
                     print(data)
         if self.choice=="Mannual pass":
-            with open("Hand_pass", "r")as file:
+            with open("file.txt1", "r")as file:
                 for data in file.readlines():
                     print(data)
